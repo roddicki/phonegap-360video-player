@@ -2,9 +2,9 @@
 
 A Phonegap / Cordova project that is a 360 mp4 video player for Android and iOS
 
-Adapted from https://github.com/borismus/webvr-boilerplate
+Adapted from https://github.com/borismus/webvr-boilerplate. This project uses three.js and web vr
 
-This project aims to give some simple HTML5 / JavaScript style functionality to 360 video playback using three.js and web vr
+This project aims to give some simple HTML5 / JavaScript style functionality to 360 video playback. 
 
 ## Usage
 ### Set up

@@ -48,7 +48,7 @@ threeSixtyVideo.element references the video element, exposing its standard HTML
 
 	threeSixtyVideo.element.pause();
 
-	threeSixtyVideo.currentTime;
+	threeSixtyVideo.element.currentTime;
 
 
 ## android-minSdkVersion (Android only)

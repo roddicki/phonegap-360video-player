@@ -21,9 +21,16 @@ Replace the reference to the video file in index.html
   		element:""
 	};
 
-The path should to the video file should be configured from the www directory
+The path to the video file should be configured from the www directory
 
-Replace the config.xml with this config.xml and change the <widget id> and <name> / <author> / <description> details
+Replace the config.xml with this config.xml and change the details for:
+	
+	<widget id>  
+	<name>
+	<author>
+	<description> 
+
+eg
 	
 	<widget id="com.yourname.project" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
@@ -35,7 +42,7 @@ Note the preferences needed for inline Media Playback and auto play
 ### Video player functions
 js/index.js contains an example video function
 
-threeSixtyVideo.element references the <video> element, exposing its standard HTML5 DOM methods, properties, and events to JavaScript.
+threeSixtyVideo.element references the video element, exposing its standard HTML5 DOM methods, properties, and events to JavaScript. Eg
 
 	threeSixtyVideo.element.play();
 

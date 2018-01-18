@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.roddickinson.webvr" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>360 video</name>
+    <description>
+        PhoneGap WebVR 360 video.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <!--needed for ios to play the video fullscreen-->
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false"/>
+    <!--needed for ios to play the video fullscreen-->
+
+    <preference name="BackgroundColor" value="0xff000000" />
+
+    <content src="index.html" />
+
+    <!-- needed for webvr below android 5 -->
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-targetSdkVersion" value="25" />
+    <!-- needed for webvr below android 5 -->
+
+    <!-- needed to launch into fullscreen -->
+    <preference name="Fullscreen" value="true" />
+    <!-- needed to launch into fullscreen -->
+
+    <!-- needed to rotate screen ONLY NEEDED FOR IOS -->
+    <plugin name="cordova-plugin-screen-orientation" source="npm" version="2.0.0" />
+    <!-- needed to rotate screen ONLY NEEDED FOR IOS -->
+
+
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="~5.1.1" />
+    <engine name="ios" spec="~4.1.1" />
+</widget>

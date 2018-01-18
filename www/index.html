@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Web VR boilerplate</title>
+ <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+</head>
+
+<body>
+  <div id="poster"></div>
+  <!-- <a href="#" id="exit-fullscreen"></a> -->
+
+  <div id="ui">
+    <div id="vr-button"></div>
+    <a id="magic-window" href="#">Try it without a headset</a>
+  </div>
+  
+</body>
+
+<script>
+
+var threeSixtyVideo = {
+  source:"video/myvideo.mp4", 
+  element:""
+};
+
+WebVRConfig = {
+  //360video: "video/myvideo.mp4",
+  /**
+   * webvr-polyfill configuration
+   * leave commented for default behaviour
+   */
+
+  // Forces availability of VR mode.
+  //FORCE_ENABLE_VR: true, // Default: false.
+  // Complementary filter coefficient. 0 for accelerometer, 1 for gyro.
+  //K_FILTER: 0.98, // Default: 0.98.
+  // How far into the future to predict during fast motion.
+  //PREDICTION_TIME_S: 0.040, // Default: 0.040 (in seconds).
+  // Flag to disable touch panner. In case you have your own touch controls
+  //TOUCH_PANNER_DISABLED: true, // Default: false.
+  // Enable yaw panning only, disabling roll and pitch. This can be useful for
+  // panoramas with nothing interesting above or below.
+  //YAW_ONLY: true, // Default: false.
+  // Enable the deprecated version of the API (navigator.getVRDevices).
+  //ENABLE_DEPRECATED_API: true, // Default: false.
+  // Scales the recommended buffer size reported by WebVR, which can improve
+  // performance. Making this very small can lower the effective resolution of
+  // your scene.
+  BUFFER_SCALE: 0.5, // default: 1.0
+  // Allow VRDisplay.submitFrame to change gl bindings, which is more
+  // efficient if the application code will re-bind it's resources on the
+  // next frame anyway.
+  // Dirty bindings include: gl.FRAMEBUFFER_BINDING, gl.CURRENT_PROGRAM,
+  // gl.ARRAY_BUFFER_BINDING, gl.ELEMENT_ARRAY_BUFFER_BINDING,
+  // and gl.TEXTURE_BINDING_2D for texture unit 0
+  // Warning: enabling this might lead to rendering issues.
+  //DIRTY_SUBMIT_FRAME_BINDINGS: true // default: false
+};
+</script>
+
+<!--A polyfill for Promises. Needed for IE and Edge.-->
+<script src="node_modules/es6-promise/dist/es6-promise.min.js"></script>
+<!--three.js 3d library-->
+<script src="node_modules/three/build/three.min.js"></script>
+<!--VRControls.js acquires positional information from connected VR devices and applies the transformations to a three.js camera object.-->
+<script src="node_modules/three/examples/js/controls/VRControls.js"></script>
+<!--VREffect.js handles stereo camera setup and rendering.-->
+<script src="node_modules/three/examples/js/effects/VREffect.js"></script>
+<!--A polyfill for WebVR using the Device{Motion,Orientation}Event API.-->
+<script src="node_modules/webvr-polyfill/build/webvr-polyfill.min.js"></script>
+<!--A set of UI controls for entering VR mode.-->
+<script src="node_modules/webvr-ui/build/webvr-ui.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/video.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</html>

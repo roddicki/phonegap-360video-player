@@ -1,10 +1,10 @@
-# PhoneGap audio player 
+# PhoneGap 360 mp4 video player 
 
 A Phonegap / Cordova project that is a 360 mp4 video player for Android and iOS
 
 Adapted from https://github.com/borismus/webvr-boilerplate
 
-This projects aims to give some simple HTML5 style functionality to the 360 video playback 
+This project aims to give some simple HTML5 style functionality to 360 video playback using three.js and web vr
 
 ## Usage
 ### Set up
@@ -32,27 +32,16 @@ Note the preferences needed for inline Media Playback and auto play
 	<preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false"/>
 
+### Video player functions
+js/index.js contains an example video function
 
-audio-player.js file should be added to index.html 
-	
-	<script type="text/javascript" src="js/audio-player.js"></script>
+threeSixtyVideo.element references the <video> element, exposing its standard HTML5 DOM methods, properties, and events to javaScript.
 
-To play audio use the following inside the 'deviceready' function
+	threeSixtyVideo.element.play();
 
-	audio.play("path/to/my/audioFile.mp3");
+	threeSixtyVideo.element.pause();
 
-The path should to the audioFile should be configured from the www directory
-
-To pause any audio playing
-	
-	audio.pause();
-
-(typically these would be triggered by an event listener)
-
-It is possible to use multiple audio files with multiple instances of audio.play without conflict. Triggering multiple files to play will result in overlapping audio playback.
-
-	audio.play("path/to/my/audioFile1.mp3"); 
-	audio.play("path/to/my/audioFile2.mp3"); 
+	threeSixtyVideo.currentTime;
 
 
 ## android-minSdkVersion (Android only)
@@ -63,6 +52,8 @@ This template sets the minimum to `21`.
 
     <preference name="android-minSdkVersion" value="21" />
     <preference name="android-targetSdkVersion" value="25" />
+
+Extra resources (crosswalk) are needed to suuport an sdk lower than 21 (Android 5)
 
 ## &lt;access ...&gt; (All)
 

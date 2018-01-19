@@ -1,4 +1,4 @@
-# PhoneGap 360 mp4 video player 
+# PhoneGap / Cordova 360 mp4 video player 
 
 This is a Phonegap / Cordova 360 mp4 video player for Android and iOS.
 This project adds some simple HTML5 / JavaScript functionality to 360 video playback. 

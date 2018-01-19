@@ -1,10 +1,11 @@
 # PhoneGap 360 mp4 video player 
 
-A Phonegap / Cordova project that is a 360 mp4 video player for Android and iOS
+This is a Phonegap / Cordova 360 mp4 video player for Android and iOS.
+This project adds some simple HTML5 / JavaScript functionality to 360 video playback. 
 
-Adapted from https://github.com/borismus/webvr-boilerplate. This project uses three.js and web vr
+Adapted from https://github.com/borismus/webvr-boilerplate. This project uses three.js and webvr.  
+It also uses the WebVR UI project to render the UI to enter VR and magic window modes.
 
-This project aims to give some simple HTML5 / JavaScript style functionality to 360 video playback. 
 
 ## Usage
 ### Set up
@@ -34,13 +35,13 @@ eg
 	
 	<widget id="com.yourname.project" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-Note the preferences needed for inline Media Playback and auto play
+Note the preferences needed for inline media playback and auto play
 	
 	<preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false"/>
 
 ### Video player functions
-js/index.js contains an example video function
+www/js/index.js contains an example video function
 
 threeSixtyVideo.element references the video element, exposing its standard HTML5 DOM methods, properties, and events to JavaScript. Eg
 
